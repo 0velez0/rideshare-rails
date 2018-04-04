@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :passengers
 
-  resources :trips 
+  # we don't need a list of all the trips, we don't need functionality to create a new trip
+  resources :trips, except: [:index, :new]
 
 end
