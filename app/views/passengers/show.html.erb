@@ -11,7 +11,15 @@
 
 
 <h2>Trips</h2>
-<%= @passenger.trips%>
+<% @passenger.trips.each do |trip| %>
+  <%= trip.id %>
+  <%= trip.date %>
+  <%= trip.driver.name %>
+  <%= trip.passenger.name %>
+  <%= trip.cost %>
+  <%= trip.rating %>
+  <br>
+<% end %>
 
 
 <h3>Add a New Trip</h3>
