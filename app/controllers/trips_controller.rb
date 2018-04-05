@@ -9,6 +9,7 @@ class TripsController < ApplicationController
   end
 
   def new
+    
   end
 
   def show
@@ -20,6 +21,7 @@ class TripsController < ApplicationController
   end
 
   def update
+
   end
 
   def destroy
