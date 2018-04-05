@@ -1,6 +1,9 @@
 class Driver < ApplicationRecord
   has_many :trips
 
+  validates :name, presence: true, format: {with: /\A[a-zA-Z\s\.]+\z/}
+  validates :vin, presence: true, length: {is: 17}
+
   def total_revenue
     fee = 1.65
     subtotal = 0
@@ -24,7 +27,7 @@ class Driver < ApplicationRecord
 
   # def car_make
   #
-  # end 
+  # end
 
 
 end
