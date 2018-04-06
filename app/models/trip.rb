@@ -7,8 +7,7 @@ class Trip < ApplicationRecord
     date = Date.today
     driver = Driver.all.sample
     #TODO generate a random cost
-    cost = 5.00
-    Trip.create(date:date,driver:driver,passenger:passenger,cost:cost)
+    cost = (rand()*50).round(2)
+    Trip.create(date: date,driver: driver,passenger: passenger,cost: cost)
   end
-
 end

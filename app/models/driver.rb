@@ -10,6 +10,7 @@ class Driver < ApplicationRecord
     driver_take_home = 0.8
 
     self.trips.each do |trip|
+      trip.cost /= 100
       subtotal += trip.cost - fee
     end
     total = (subtotal * driver_take_home).round(2)

@@ -1,9 +1,9 @@
 <h1>Passenger Details</h1>
 
 <h3><%= @passenger.name %></h3>
-<h3><%= @passenger.phone_num %></h3>
+<h3>Phone Number: <%= @passenger.phone_num %></h3>
 
-<h3>total paid</h3>
+<h3>Total Paid: $<%= @passenger.total_spend%></h3>
 
 <%= button_to("Add a New Trip", passenger_trips_path(@passenger.id)) %>
 
@@ -13,6 +13,7 @@
 
 <h2>Trips</h2>
 <% @passenger.trips.each do |trip| %>
+
   <%= trip.id %>
   <%= trip.date %>
   <%= trip.driver.name %>
