@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   end
 
   resources :passengers do
-    resources :trips, only: [:index, :create]
+    resources :trips, only: [:index, :create, :show]
   end
   # we don't need a list of all the trips, we don't need functionality to create a new trip
-  resources :trips, only: [:show, :edit, :update, :destroy]
+  resources :trips, only: [:index, :show, :edit, :update, :destroy]
 
 end
