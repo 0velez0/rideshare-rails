@@ -1,30 +1,41 @@
 class PassengersController < ApplicationController
 
-def index
-  @passengers = Passenger.all
-end
+  def index
+    @passengers = Passenger.all
+  end
 
-def create
+  def create
+    @passenger = Passenger.create(passenger_params)
+    if @passenger.persisted?
+      redirect_to passenger_path(@passenger.id)
+    else
+      render :new
+    end
+  end
 
-end
+  def new
+    @passenger = Passenger.new
+  end
 
-def new
+  def show
+    @passenger = Passenger.find(params[:id])
+  end
 
-end
+  def edit
+    @passenger = Passenger.find(params[:id])
+  end
 
-def show
-  @passenger = Passenger.find(params[:id])
-end
+  def update
+  end
 
-def edit
-  @passenger = Passenger.find(params[:id])
-end
+  def destroy
 
-def update
-end
+  end
 
-def destroy
+  private
+  def passenger_params
+    return params.require(:passenger).permit(:name, :phone_num)
 
-end
+  end
 
 end
