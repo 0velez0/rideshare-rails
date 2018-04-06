@@ -21,6 +21,13 @@ class TripsController < ApplicationController
   end
 
   def update
+    trip = Trip.find(params[:id])
+    rating = params[:trip][:rating]
+    trip.update_attributes(rating: rating)
+
+    if trip.save
+      redirect_to passenger_path(trip.passenger.id)
+    end
 
   end
 
