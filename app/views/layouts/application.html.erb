@@ -11,20 +11,20 @@
   <body>
     <nav>
       <ul>
-        <li>
-          <%= link_to "RideShare", root_path %>
+        <li><%= link_to "RideShare", root_path %></li>
+        <li class="dropdown">
+          <a class="dropbtn">Drivers</a>
+          <div class="dropdown-content">
+            <%= link_to "Driver List", drivers_path %>
+            <%= link_to "Add a Driver", new_driver_path %>
+          </div>
         </li>
-        <li>
-          <%= link_to "Driver List", drivers_path %>
-        </li>
-        <li>
-          <%= link_to "Passenger List", passengers_path %>
-        </li>
-        <li>
-          <%= link_to "Add a Driver", new_driver_path %>
-        </li>
-        <li>
-          <%= link_to "Add a Passenger", new_passenger_path %>
+          <li class="dropdown">
+          <a class="dropbtn">Passengers</a>
+          <div class="dropdown-content">
+            <%= link_to "Passenger List", passengers_path %>
+            <%= link_to "Add a Passenger", new_passenger_path %>
+          </div>
         </li>
       </ul>
 
