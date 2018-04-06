@@ -21,7 +21,7 @@ class Driver < ApplicationRecord
     self.trips.each do |trip|
       total_ratings += trip.rating
     end
-    average = ((total_ratings.to_f) / trips.length).round(2)
+    average = ((total_ratings.to_f) / trips.length).round(1)
     return average
   end
 
