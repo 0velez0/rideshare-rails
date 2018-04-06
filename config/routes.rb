@@ -3,13 +3,13 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :drivers do
-    resources :trips, only: [:index, :new, :create]
+    resources :trips, only: [:index]
   end
-  
+
   resources :passengers do
-    resources :trips, only: [:index, :new, :create]
+    resources :trips, only: [:index, :create]
   end
   # we don't need a list of all the trips, we don't need functionality to create a new trip
-  resources :trips, except: [:index, :new]
+  resources :trips, only: [:show, :edit, :update, :destroy]
 
 end
