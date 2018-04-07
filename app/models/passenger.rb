@@ -7,6 +7,7 @@ class Passenger < ApplicationRecord
   def total_spend
       total = 0.0
       self.trips.each do |trip|
+        trip.cost /= 100
         if trip.cost != nil
         total += trip.cost
         end
