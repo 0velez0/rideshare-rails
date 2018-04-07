@@ -18,7 +18,7 @@
   <%= trip.date %>
   <%= trip.driver.name %>
   <%= trip.passenger.name %>
-  <%= trip.cost %>
+  <%= trip.cost / 100 %>
   <%= trip.rating %>
 
   <%= render partial: "layouts/error_messages", locals: { model: trip } %>

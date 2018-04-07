@@ -6,7 +6,6 @@ class Trip < ApplicationRecord
     # in charge of finding a driver and calling Trip.new or Trip.create to assoc trip with it
     date = Date.today
     driver = Driver.all.sample
-    #TODO generate a random cost
     cost = (rand()*50).round(2) * 100
     Trip.create(date: date,driver: driver,passenger: passenger,cost: cost)
   end

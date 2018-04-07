@@ -10,7 +10,6 @@ class Driver < ApplicationRecord
     driver_take_home = 0.8
 
     self.trips.each do |trip|
-      trip.cost /= 100
       subtotal += trip.cost - fee
     end
     total = (subtotal * driver_take_home).round(2)
@@ -20,7 +19,11 @@ class Driver < ApplicationRecord
   def average_rating
     total_ratings = 0
     self.trips.each do |trip|
-      total_ratings += trip.rating
+
+      if trip.rating != nil
+
+        total_ratings += trip.rating
+      end
     end
     average = ((total_ratings.to_f) / trips.length).round(1)
     return average
