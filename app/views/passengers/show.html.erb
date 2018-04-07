@@ -21,12 +21,13 @@
   <%= trip.cost %>
   <%= trip.rating %>
 
+  <%= render partial: "layouts/error_messages", locals: { model: trip } %>
   <% if trip.rating == nil %>
     <!-- <%= button_to("Rate Trip", edit_trip_path(trip.id)) %> -->
 
     <%= form_for trip do |f| %>
       <%= f.label :rating, "Rating" %>
-      <%= f.text_field :rating %>
+      <%= f.number_field :rating, in: 0..5 %>
       <%= f.submit %>
     <% end %>
 
