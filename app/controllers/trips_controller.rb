@@ -32,6 +32,9 @@ class TripsController < ApplicationController
   end
 
   def destroy
+    driver = Trip.find(params[:id]).driver
+    Trip.destroy(params[:id])
+    redirect_to driver_path(driver)
 
   end
 

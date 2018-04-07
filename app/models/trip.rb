@@ -9,4 +9,6 @@ class Trip < ApplicationRecord
     cost = (rand()*50).round(2) * 100
     Trip.create(date: date,driver: driver,passenger: passenger,cost: cost)
   end
+
+
 end
