@@ -18,5 +18,6 @@
   <%= trip.passenger.name %>
   <%= trip.cost %>
   <%= trip.rating %>
+  <%= link_to("Delete", trip_path(trip), method: :delete, data: {confirm: "Are you sure you want to delete this driver?"}) %>
   <br>
 <% end %>
