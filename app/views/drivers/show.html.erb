@@ -12,7 +12,7 @@
 
 <h2>Trips</h2>
 <% @driver.trips.each do |trip| %>
-  <%= trip.id %>
+  <%= link_to(trip.id, trip_path(trip)) %>
   <%= trip.date %>
   <%= trip.driver.name %>
   <%= trip.passenger.name %>
