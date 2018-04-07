@@ -1,0 +1,19 @@
+<h3>Editing trip #<%= @trip.id %></h3>
+<%= render partial: "layouts/error_messages", locals: { model: @trip} %>
+
+<%= form_for @trip do |f| %>
+  <%= f.label :date, "Date" %>
+  <%= f.text_field :date %>
+
+  <%= f.label :rating, "Rating" %>
+  <%= f.number_field :rating %>
+
+  <%= f.label :driver, "Driver" %>
+  <%= f.text_field :driver, value: @trip.driver.name %>
+
+  <%= f.label :passenger, "Passenger" %>
+  <%= f.text_field :passenger, value: @trip.passenger.name %>
+
+  <%= f.submit %>
+
+<% end %>
