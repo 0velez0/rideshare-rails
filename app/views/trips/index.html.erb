@@ -1,6 +1,6 @@
 <h1>All Trips</h1>
 
-<ul>
+<ul class="all_trips">
   <% @trips.each do |trip| %>
     <li><%= link_to(trip.id, trip_path(trip)) %></li>
     <li><%= trip.date %></li>
